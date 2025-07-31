@@ -13,6 +13,13 @@ version = 1.0
 requirements = python3,kivy,requests
 orientation = portrait
 fullscreen = 1
+icon.filename = assets/icon.png
+
+# دخول الشاشة الرئيسية تلقائيًا
+entrypoint = main.py
+
+# الموارد المضمنة
+presplash.filename = assets/splash.png
 
 [android]
 android.api = 30
@@ -21,8 +28,7 @@ android.sdk = 30
 android.build_tools_version = 30.0.3
 android.ndk = 25b
 android.sdk_tools = 6858069
-android.release = False
-
-# Uncomment and add permissions if needed
-# android.permissions = INTERNET
-# android.arch = armeabi-v7a, arm64-v8a
+android.permissions = INTERNET,ACCESS_NETWORK_STATE
+android.release = True
+android.debug = False
+android.arch = armeabi-v7a,arm64-v8a
