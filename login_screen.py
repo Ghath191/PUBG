@@ -68,7 +68,7 @@ class LoginScreen(Screen):
             background_color=get_color_from_hex("#222222"),
             foreground_color=get_color_from_hex("#FFFFFF"),
             cursor_color=get_color_from_hex("#1DB954"),
-            font_size=24,  # حجم الخط داخل النص
+            font_size=24,
         )
 
         self.password_input = TextInput(
@@ -82,7 +82,7 @@ class LoginScreen(Screen):
             background_color=get_color_from_hex("#222222"),
             foreground_color=get_color_from_hex("#FFFFFF"),
             cursor_color=get_color_from_hex("#1DB954"),
-            font_size=24,  # حجم الخط داخل النص
+            font_size=24,
         )
 
         self.status_label = Label(
@@ -113,15 +113,12 @@ class LoginScreen(Screen):
 
         self.add_widget(self.layout)
 
-        # ربط حدث التركيز لرفع الواجهة عند ظهور لوحة المفاتيح
         self.email_input.bind(focus=self.on_focus)
         self.password_input.bind(focus=self.on_focus)
 
-        # استعادة البريد إذا وجد
         if store.exists("user"):
             user_data = store.get("user")
-            if "email" in user_data:
-                self.email_input.text = user_data["email"]
+            self.email_input.text = user_data.get("email", "")
 
     def on_focus(self, instance, value):
         if value:
