@@ -14,11 +14,7 @@ requirements = python3,kivy,requests
 orientation = portrait
 fullscreen = 1
 icon.filename = assets/icon.png
-
-# دخول الشاشة الرئيسية تلقائيًا
 entrypoint = main.py
-
-# الموارد المضمنة
 presplash.filename = assets/splash.png
 
 [android]
