@@ -5,7 +5,7 @@ log_file = buildozer.log
 
 [app]
 title = LoginApp
-package.name = loginapp
+package.name = ghaith
 package.domain = org.kivy
 source.dir = .
 source.include_exts = py,png,jpg,kv,atlas
